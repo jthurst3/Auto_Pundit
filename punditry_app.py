@@ -195,7 +195,7 @@ def checkJSONRespondToSentence(json):
 
 if __name__ == '__main__':
 	# MAKE SURE TO NOT HAVE debug=True WHEN PUSHING TO PRODUCTION
-	app.run(debug=True)
+	app.run()
 
 
 
