@@ -13,7 +13,7 @@ import punditry_main
 def create_app():
      app = Flask(__name__)
      def preprocess():
-     	punditry_main.preprocess_short()
+     	punditry_main.preprocess()
      preprocess()
 
      return app
@@ -151,8 +151,8 @@ def checkJSONFinishSentence(json):
 	# gram must be an integer
 	if not isinstance(request.json['grams'], int):
 		return False
-	# grams must be between 1 and 6
-	if request.json['grams'] < 1 or request.json['grams'] > 6:
+	# grams must be between 1 and 4
+	if request.json['grams'] < 1 or request.json['grams'] > 4:
 		return False
 	# pundit must be a string
 	if not isinstance(request.json['pundit'], str) and not isinstance(request.json['pundit'], unicode):
@@ -176,8 +176,8 @@ def checkJSONRespondToSentence(json):
 	# gram must be an integer
 	if not isinstance(request.json['grams'], int):
 		return False
-	# grams must be between 1 and 6
-	if request.json['grams'] < 1 or request.json['grams'] > 6:
+	# grams must be between 1 and 4
+	if request.json['grams'] < 1 or request.json['grams'] > 4:
 		return False
 	# pundit must be a string
 	if not isinstance(request.json['pundit'], str) and not isinstance(request.json['pundit'], unicode):

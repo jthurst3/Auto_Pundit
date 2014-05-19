@@ -14,6 +14,8 @@ successfulInit = False
 # does some preprocessing, to speed up the response time of requests
 pundit_files = {'Limbaugh': 'con_text.txt', 'Bloomberg': 'lib_text.txt'}
 nltk_models = {}
+# does some preprocessing of Limbot's and Bloombot's data, so that requests
+# are processed relatively quickly
 def preprocess():
   for pundit in pundit_files:
     # parse each input file, and convert it into NLTK tokens and text
@@ -21,7 +23,8 @@ def preprocess():
     tokens = nltk.word_tokenize(in_file.read().decode('utf-8', 'ignore'))
     text = nltk.Text(tokens)
     nltk_models[pundit] = {}
-    for gram in range(1,7):
+    # only support up to 4-grams
+    for gram in range(1,5):
       nltk_models[pundit][gram] = nltk.NgramModel(gram, text)
     in_file.close()
     successfulInit = True
