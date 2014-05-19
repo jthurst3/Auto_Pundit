@@ -23,8 +23,8 @@ def preprocess():
     tokens = nltk.word_tokenize(in_file.read().decode('utf-8', 'ignore'))
     text = nltk.Text(tokens)
     nltk_models[pundit] = {}
-    # only support up to 4-grams
-    for gram in range(1,5):
+    # only support up to 3-grams
+    for gram in range(1,4):
       nltk_models[pundit][gram] = nltk.NgramModel(gram, text)
     in_file.close()
     successfulInit = True

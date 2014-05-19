@@ -151,8 +151,8 @@ def checkJSONFinishSentence(json):
 	# gram must be an integer
 	if not isinstance(request.json['grams'], int):
 		return False
-	# grams must be between 1 and 4
-	if request.json['grams'] < 1 or request.json['grams'] > 4:
+	# grams must be between 1 and 3
+	if request.json['grams'] < 1 or request.json['grams'] > 3:
 		return False
 	# pundit must be a string
 	if not isinstance(request.json['pundit'], str) and not isinstance(request.json['pundit'], unicode):
@@ -176,8 +176,8 @@ def checkJSONRespondToSentence(json):
 	# gram must be an integer
 	if not isinstance(request.json['grams'], int):
 		return False
-	# grams must be between 1 and 4
-	if request.json['grams'] < 1 or request.json['grams'] > 4:
+	# grams must be between 1 and 3
+	if request.json['grams'] < 1 or request.json['grams'] > 3:
 		return False
 	# pundit must be a string
 	if not isinstance(request.json['pundit'], str) and not isinstance(request.json['pundit'], unicode):
