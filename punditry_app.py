@@ -13,7 +13,7 @@ import punditry_main
 def create_app():
      app = Flask(__name__)
      def preprocess():
-     	punditry_main.preprocess()
+     	punditry_main.preprocess_short()
      preprocess()
 
      return app
